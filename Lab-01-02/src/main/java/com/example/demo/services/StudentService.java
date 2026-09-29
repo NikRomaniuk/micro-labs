@@ -15,6 +15,11 @@ public class StudentService
 		return this.students;
 	}
 	
+	public void add(Student s)
+	{
+		this.students.add(s);
+	}
+	
 	public ArrayList<Student> post()
 	{
 		Student s1 = new Student("G001", "John", 21);

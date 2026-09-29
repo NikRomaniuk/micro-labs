@@ -2,10 +2,7 @@ package com.example.demo.controllers;
 
 import java.util.ArrayList;
 
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.example.demo.models.Student;
 import com.example.demo.services.*;
@@ -25,6 +22,12 @@ public class MainController
 	public ArrayList<Student> post()
 	{
 		return this.ss.post();
+	}
+	
+	@PostMapping("/students")
+	public void addStudent(@RequestBody Student s)
+	{
+		ss.add(s);
 	}
 	
 	@GetMapping("/students")
