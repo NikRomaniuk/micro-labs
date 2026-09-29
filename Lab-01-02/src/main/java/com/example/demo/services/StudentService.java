@@ -10,9 +10,9 @@ public class StudentService
 {
 	ArrayList<Student> students = new ArrayList();
 	
-	public String get()
+	public ArrayList<Student> get()
 	{
-		return "List";
+		return this.students;
 	}
 	
 	public ArrayList<Student> post()

@@ -28,9 +28,9 @@ public class MainController
 	}
 	
 	@GetMapping("/students")
-	public String get()
+	public ArrayList<Student> get()
 	{
-		return "GET";
+		return this.ss.get();
 	}
 	
 	@DeleteMapping("/students/{id}")
