@@ -10,7 +10,7 @@ import com.example.demo.services.*;
 @RestController
 public class MainController
 {
-	StudentService ss;
+	private StudentService ss;
 	
 	public MainController(StudentService ss)
 	{
@@ -37,5 +37,8 @@ public class MainController
 	}
 	
 	@DeleteMapping("/students/{id}")
-	public String delete() { return "Student DELETED"; }
+	public void removeStudent(@PathVariable String id)
+	{
+		ss.removeById(id);
+	}
 }

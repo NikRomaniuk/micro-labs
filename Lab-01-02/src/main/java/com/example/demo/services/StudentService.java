@@ -8,7 +8,7 @@ import java.util.*;
 @Service
 public class StudentService
 {
-	ArrayList<Student> students = new ArrayList();
+	private ArrayList<Student> students = new ArrayList();
 	
 	public ArrayList<Student> get()
 	{
@@ -17,7 +17,22 @@ public class StudentService
 	
 	public void add(Student s)
 	{
-		this.students.add(s);
+		students.add(s);
+	}
+	
+	public void removeById(String id)
+	{
+		ArrayList<Student> removeList = new ArrayList();
+		
+		for (int i = 0; i < students.size(); i++)
+		{
+			if(students.get(i).getId().equals(id))
+			{
+				removeList.add(students.get(i));
+			}
+		}
+		
+		students.removeAll(removeList);
 	}
 	
 	public ArrayList<Student> post()
