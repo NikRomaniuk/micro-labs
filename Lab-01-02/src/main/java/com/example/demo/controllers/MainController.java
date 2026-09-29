@@ -1,10 +1,13 @@
 package com.example.demo.controllers;
 
+import java.util.ArrayList;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.models.Student;
 import com.example.demo.services.*;
 
 @RestController
@@ -19,13 +22,16 @@ public class MainController
 	}
 
 	@PostMapping("/")
-	public String post()
+	public ArrayList<Student> post()
 	{
-		return this.ss.ssPost();
+		return this.ss.post();
 	}
 	
 	@GetMapping("/students")
-	public String get() { return "GET"; }
+	public String get()
+	{
+		return "GET";
+	}
 	
 	@DeleteMapping("/students/{id}")
 	public String delete() { return "Student DELETED"; }
